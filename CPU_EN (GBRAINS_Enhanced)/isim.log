@@ -1,0 +1,82 @@
+ISim log file
+Running: C:\Users\Justin\Downloads\GBRAINS_CPU\CPU_EN (GBRAINS_R1.0)\CPU_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Justin/Downloads/GBRAINS_CPU/CPU_EN (GBRAINS_R1.0)/CPU_Test_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+             C E C S 4 4 0    S E N I O R P R O J E C T   GBRAINS
+Finished circuit initialization process.
+# run all
+BREAK INSTRUCTION FETCHED 1670.0 ps
+ R E G I S T E R S	A F T E R	B R E A K
+ 
+                    GBRAINS   R e g i s t e r   D u m p    
+************************************************************
+   TIME        ||               Regfile T ($ri)   ||        
+************************************************************
+time: 1691.0 ps 	 $r[0]: 00000000    $r[16]: xxxxxxxx
+time: 1701.0 ps 	 $r[1]: 12345678    $r[17]: xxxxxxxx
+time: 1711.0 ps 	 $r[2]: 87654321    $r[18]: xxxxxxxx
+time: 1721.0 ps 	 $r[3]: abcdef01    $r[19]: xxxxxxxx
+time: 1731.0 ps 	 $r[4]: 01fedcba    $r[20]: xxxxxxxx
+time: 1741.0 ps 	 $r[5]: 5a5a5a5a    $r[21]: xxxxxxxx
+time: 1751.0 ps 	 $r[6]: 400921fb    $r[22]: xxxxxxxx
+time: 1761.0 ps 	 $r[7]: 54442d11    $r[23]: xxxxxxxx
+time: 1771.0 ps 	 $r[8]: 40000000    $r[24]: xxxxxxxx
+time: 1781.0 ps 	 $r[9]: ffffffff    $r[25]: xxxxxxxx
+time: 1791.0 ps 	 $r[10]: 00000004    $r[26]: xxxxxxxx
+time: 1801.0 ps 	 $r[11]: 00000005    $r[27]: xxxxxxxx
+time: 1811.0 ps 	 $r[12]: 00000007    $r[28]: xxxxxxxx
+time: 1821.0 ps 	 $r[13]: 05060506    $r[29]: 000003fc
+time: 1831.0 ps 	 $r[14]: fd03fd03    $r[30]: xxxxxxxx
+time: 1841.0 ps 	 $r[15]: 10010000    $r[31]: xxxxxxxx
+                  GBRAINS  D o u b l e R e g i s t e r s    
+time: 1851.0 ps 	 $f[0]: 1234567887654321    $f[16]: xxxxxxxxxxxxxxxx
+time: 1861.0 ps 	 $f[1]: 400921fb54442d11    $f[17]: xxxxxxxxxxxxxxxx
+time: 1871.0 ps 	 $f[2]: 4000000000000000    $f[18]: xxxxxxxxxxxxxxxx
+time: 1881.0 ps 	 $f[3]: 401921fb54442d11    $f[19]: xxxxxxxxxxxxxxxx
+time: 1891.0 ps 	 $f[4]: 4000000000000000    $f[20]: xxxxxxxxxxxxxxxx
+time: 1901.0 ps 	 $f[5]: 4022d97c7f3321cd    $f[21]: xxxxxxxxxxxxxxxx
+time: 1911.0 ps 	 $f[6]: bff243f6a8885a22    $f[22]: xxxxxxxxxxxxxxxx
+time: 1921.0 ps 	 $f[7]: 0000000000000000    $f[23]: xxxxxxxxxxxxxxxx
+time: 1931.0 ps 	 $f[8]: xxxxxxxxxxxxxxxx    $f[24]: xxxxxxxxxxxxxxxx
+time: 1941.0 ps 	 $f[9]: xxxxxxxxxxxxxxxx    $f[25]: xxxxxxxxxxxxxxxx
+time: 1951.0 ps 	 $f[10]: xxxxxxxxxxxxxxxx    $f[26]: xxxxxxxxxxxxxxxx
+time: 1961.0 ps 	 $f[11]: xxxxxxxxxxxxxxxx    $f[27]: xxxxxxxxxxxxxxxx
+time: 1971.0 ps 	 $f[12]: xxxxxxxxxxxxxxxx    $f[28]: xxxxxxxxxxxxxxxx
+time: 1981.0 ps 	 $f[13]: xxxxxxxxxxxxxxxx    $f[29]: xxxxxxxxxxxxxxxx
+time: 1991.0 ps 	 $f[14]: xxxxxxxxxxxxxxxx    $f[30]: xxxxxxxxxxxxxxxx
+time: 2001.0 ps 	 $f[15]: xxxxxxxxxxxxxxxx    $f[31]: xxxxxxxxxxxxxxxx
+The double at F[$01] is 3.141593
+The double at F[$02] is 2.000000
+The double at F[$03] is 6.283185
+The double at F[$04] is 2.000000
+The double at F[$05] is 9.424778
+The double at F[$06] is -1.141593
+The double at F[$07] is 0.000000
+                  GBRAINS  V e c t o r R e g i s t e r s    
+time: 2011.0 ps 	 $f[0]: 12345678400921fb    $f[16]: ff09ff09ff09ff09
+time: 2021.0 ps 	 $f[1]: fd03fd03fd03fd03    $f[17]: xxxxxxxxxxxxxxxx
+time: 2031.0 ps 	 $f[2]: 0506050605060506    $f[18]: xxxxxxxxxxxxxxxx
+time: 2041.0 ps 	 $f[3]: 0000000500000007    $f[19]: xxxxxxxxxxxxxxxx
+time: 2051.0 ps 	 $f[4]: 0000000500000004    $f[20]: xxxxxxxxxxxxxxxx
+time: 2061.0 ps 	 $f[5]: 0000001e00000021    $f[21]: xxxxxxxxxxxxxxxx
+time: 2071.0 ps 	 $f[6]: ff09ff09ff09ff09    $f[22]: xxxxxxxxxxxxxxxx
+time: 2081.0 ps 	 $f[7]: ff00ff00ff00ff00    $f[23]: xxxxxxxxxxxxxxxx
+time: 2091.0 ps 	 $f[8]: 0000000000000000    $f[24]: xxxxxxxxxxxxxxxx
+time: 2101.0 ps 	 $f[9]: ffffffffffffffff    $f[25]: xxxxxxxxxxxxxxxx
+time: 2111.0 ps 	 $f[10]: xxxxxxxxxxxxxxxx    $f[26]: xxxxxxxxxxxxxxxx
+time: 2121.0 ps 	 $f[11]: xxxxxxxxxxxxxxxx    $f[27]: xxxxxxxxxxxxxxxx
+time: 2131.0 ps 	 $f[12]: xxxxxxxxxxxxxxxx    $f[28]: xxxxxxxxxxxxxxxx
+time: 2141.0 ps 	 $f[13]: xxxxxxxxxxxxxxxx    $f[29]: xxxxxxxxxxxxxxxx
+time: 2151.0 ps 	 $f[14]: xxxxxxxxxxxxxxxx    $f[30]: xxxxxxxxxxxxxxxx
+time: 2161.0 ps 	 $f[15]: xxxxxxxxxxxxxxxx    $f[31]: xxxxxxxxxxxxxxxx
+ 
+ 
+Stopped at time : 2162 ns : File "C:/Users/Justin/Desktop/School/2018 Fall/CECS440/XilinxProjects/GBRAINS/MCU.v" Line 1113

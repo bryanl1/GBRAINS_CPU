@@ -1,0 +1,52 @@
+@0
+3c 01 12 34  //            lui  $01, 0x1234
+34 21 56 78  //            ori  $01, 0x5678      # LI  R01,  0x12345678
+3c 02 87 65  //            lui  $02, 0x8765
+34 42 43 21  //            ori  $02, 0x4321      # LI  R02,  0x87654321
+3c 03 ab cd  //            lui  $03, 0xABCD
+34 63 ef 01  //            ori  $03, 0xEF01      # LI  R03,  0xABCDEF01
+3c 04 01 fe  //            lui  $04, 0x01FE
+34 84 dc ba  //            ori  $04, 0xDCBA      # LI  R04,  0x01FEDCBA
+3c 05 5a 5a  //            lui  $05, 0x5A5A
+34 a5 5a 5a  //            ori  $05, 0x5A5A      # LI  R05,  0x5A5A5A5A
+3c 06 40 09  //            lui  $06, 0x4009
+34 c6 21 fb  //            ori  $06, 0x21FB      # LI  R06,  0x400921FB
+3c 07 54 44  //            lui  $07, 0x5444
+34 e7 2d 11  //            ori  $07, 0x2D11      # LI  R07,  0x54442D11
+3c 08 40 00  //            lui  $08, 0x4000      # LI  R08,  0x40000000
+3c 0f 10 01  //            lui  $15, 0x1001
+35 ef 00 00  //            ori  $15, 0x0000      # LI  R15 <- 0x10010000 (base pointer)
+8d ed 00 04  //            lw   $13, 04($15)     # LI  R13 <- 0x05060506
+8d ee 00 00  //            lw   $14, 00($15)     # LI  R14 <- 0xfd03fd03
+8d eb 00 0C  //            lw   $11, 12($15)     # LI  R11 <- 0x05
+8d ec 00 08  //            lw   $12, 08($15)     # LI  R12 <- 0x07
+8d ea 00 10  //            lw   $10, 16($15)     # LI  R10 <- 0x04
+8d e9 00 14  //            lw   $9, 14($15)      # LI  R9 <- 0xFFFFFFFF
+
+///////////////Enh.IR Fmt: OPER  $ED, $ES, $ET 
+
+7C 22 00 00  //            MVFR  $00, $01, $02     # LI  F00,  0xc3c3c3c3_87654321 {R1_R2}  (writing to F0)
+7C C7 08 00  //            MVFR  $01, $06, $07     # LI  F01,  0x400921FB_54442D11 {R1_R2}  (pi in F1)
+7D 00 10 00  //            MVFR  $02, $08, $00     # LI  F02,  0x40000000_00000000 (2.0 in F2)
+7C 22 18 01  // 		   FMULT $03, $01, $02	   #     F03 = F2(2.0)   * F1(pi)
+7C 61 20 02  //            FDIV  $04, $03, $02     #     F04 = 2pi / pi
+7C 61 28 03  //            FADD  $05, $03, $01     #     F05 = pi + 2pi 
+7C 41 30 04	 //			   FSUB  $06, $02, $01     #     F06 = 2  -  pi
+7C 26 38 05  //            FZERO $07, $01, $06     #     F07 = 0.0
+
+7C 26 00 06  //            MVVR  $00, $01,$06      # LI  V00,  0x12345678_400921FB {R1_R2}  (writing to V0)
+7d ce 08 06  //            MVVR  $01, $14,$14      # LI  V01,  0xff03ff03_ff03ff03
+7d ad 10 06  //            MVVR  $02, $13,$13      # LI  V02,  0x05060506_05060506
+7c 22 80 07  //            VADDS $16, $01,$02      # LI  V03,  0xfe09ff09_ff09ff09 (Saturated Add 8 bitter)
+
+7d 6c 18 06  //            MVVR   $03, $11,$12     # Load Integers  V3= 5,7
+7d 6a 20 06  //            MVVR   $04, $11,$10     # Load Integers  V4 =5,4
+7c 0b 28 06  //            MVVR   $05, $11,$11     # Load Ints      V5 =5,5 (D Value, gets overwritten by MulAdd)
+7c 64 28 08  //            MULADD $05, $3,$4       # V5 = {32'h1E,32'h21} = decimal {30,25}={5*5+5, 5*4+5}
+
+7d 29 48 06  //            MVVR $9, $9, $9         # V09 =  0xFFFFFFFF_FFFFFFFF
+7d 30 30 09  //            VAND  $6,  $9, $16      # V06 =  0xFFFFFFFF_FFFFFFFF & FF09FF09FF09FF09
+7d 30 38 0a  //            VCEQ   $7,  $9, $16     # V07 =  0xFFFFFFFF_FFFFFFFF == FF09FF09FF09FF09 = 0XFF00FF00FF00FF00
+7d 30 40 0b  //            VCLT  $$8, $9, $16      # V08 =  0xFFFFFFFF_FFFFFFFF <  FF09FF09FF09FF09 = 0X0000000000000000
+
+00 00 00 0d  //            break
