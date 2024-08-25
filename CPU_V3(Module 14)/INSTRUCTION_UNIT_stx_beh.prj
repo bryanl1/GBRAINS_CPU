@@ -1,0 +1,5 @@
+verilog isim_temp "REG32.v"
+verilog isim_temp "PROGRAM_COUNTER.v"
+verilog isim_temp "DATA_MEMORY.v"
+verilog isim_temp "Instruction_Unit.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
