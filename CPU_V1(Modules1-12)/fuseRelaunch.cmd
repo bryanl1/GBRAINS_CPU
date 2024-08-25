@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Justin/Downloads/GBRAINS_CPU/CPU_V1(Modules1-12)/CPU_Test_isim_beh.exe" -prj "C:/Users/Justin/Downloads/GBRAINS_CPU/CPU_V1(Modules1-12)/CPU_Test_beh.prj" "work.CPU_Test" "work.glbl" 
